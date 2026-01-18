@@ -4,6 +4,8 @@
 #include <cmath>
 #include <iostream>
 
+using namespace std;
+
 class vec3 {
   public:
     double e[3];
@@ -46,13 +48,13 @@ class vec3 {
     }
 };
 
-// point3 is just an alias for vec3, but useful for geometric clarity in the code.
+// point3 is just an alias for vec3
 using point3 = vec3;
 
 
 // Vector Utility Functions
 
-inline std::ostream& operator<<(std::ostream& out, const vec3& v) {
+inline ostream& operator<<(ostream& out, const vec3& v) {
     return out << v.e[0] << ' ' << v.e[1] << ' ' << v.e[2];
 }
 
@@ -96,4 +98,9 @@ inline vec3 unit_vector(const vec3& v) {
     return v / v.length();
 }
 
+point3 origin(0, 0, 0);      // A location
+vec3 direction(1, 0, 0);     // A direction
+
 #endif
+
+//inline used to better and fast compilation.
